@@ -34,7 +34,7 @@ def AddEmployee():
 def GetEmployee():
     return render_template('GetEmp.html')
 
-@app.route("/getemp", methods=['POST'])
+@app.route("/fetchdata", methods=['POST'])
 def GetEmp():
     emp_id = request.form['emp_id']
     select_sql = "SELECT * FROM employee where emp_id= %s"
