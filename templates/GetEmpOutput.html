@@ -14,15 +14,15 @@
 
 				<div>
                     
-			  		Employee ID:<br> {{ name[0]["id"] }} <br><br>
+					  Employee ID: <b>{{ name[0][0] }}</b> <br><br>
+					  
+			  		First Name: <b>{{ name[0][1] }}</b> <br><br>
 
-			  		First Name:<br> {{ name[0]["fname"] }} <br><br>
+			  		Last Name: <b>{{ name[0][2] }}</b> <br><br>
 
-			  		Last Name:<br> {{ name[0]["lname"] }} <br><br>
+			  		Primary Interest: <b>{{ name[0][3] }}</b><br><br>
 
-			  		Primary Interest:<br> {{ name[0]["pri_skill"] }} <br><br>
-
-			  		Location:<br> {{ name[0]["location"] }} <br><br>
+			  		Location: <b>{{ name[0][4] }}</b><br><br>
 
 			  		<!-- Image URL: <br> {{ image_url }} <br><br> -->
 
@@ -31,6 +31,12 @@
 			  	</div>
 
 			</form>
+			<form action="/getemployee" method ="GET">
+				<button type="submit" style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GO BACK</button><br><br>
+	 </form>
+			<form action="/addemployee" method = "GET">
+				<button type="submit"  style="background: grey; height: 45px; width: 200px; color:white; font:oblique;">GO HOME</button><br><br>
+				</form>
 
 		</body>
 
