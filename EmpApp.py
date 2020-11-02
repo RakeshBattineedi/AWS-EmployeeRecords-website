@@ -42,8 +42,8 @@ def GetEmp():
     try:
         cursor.execute(select_sql, (emp_id))
         myresult = mycursor.fetchone()
-
-    return render_template('GetEmpOutput.html', id= myresult[0], fname= myresult[1], lname= myresult[2],interest = myresult[3], location= myresult[4])
+        print(myresult)
+    # return render_template('GetEmpOutput.html', id= myresult[0], fname= myresult[1], lname= myresult[2],interest = myresult[3], location= myresult[4])
 
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
