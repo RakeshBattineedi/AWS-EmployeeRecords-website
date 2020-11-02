@@ -42,6 +42,10 @@ def GetEmp():
     try:
         cursor.execute(select_sql, (emp_id))
         myresult = mycursor.fetchone()
+    except Exception as e:
+        return str(e)
+    finally:
+        cursor.close()
         # print(myresult)
     # return ''
     # return render_template('AddEmpOutput.html', name=emp_name)
