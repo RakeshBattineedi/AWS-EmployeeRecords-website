@@ -39,7 +39,7 @@ def GetEmp():
     emp_id = request.form['emp_id']
     select_sql = "SELECT * FROM employee where emp_id= %s"
     cursor = db_conn.cursor()
-     try:
+    try:
         cursor.execute(select_sql, (emp_id))
         myresult = mycursor.fetchone()
 
