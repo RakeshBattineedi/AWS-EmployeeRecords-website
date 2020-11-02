@@ -44,7 +44,8 @@ def GetEmp():
         myresult = mycursor.fetchone()
         # print(myresult)
     # return ''
-    return render_template('GetEmpOutput.html', myresult = myresult)
+    # return render_template('AddEmpOutput.html', name=emp_name)
+    return render_template('GetEmpOutput.html', name = myresult)
     # id= myresult[0], fname= myresult[1], lname= myresult[2],interest = myresult[3], location= myresult[4])
 
 @app.route("/addemp", methods=['POST'])
