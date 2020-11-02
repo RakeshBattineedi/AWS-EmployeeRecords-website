@@ -30,10 +30,21 @@ def home():
 def AddEmployee():
     return render_template('AddEmp.html')
 
-@app.route("/getemp", methods=['GET','POST'])
+@app.route("/getemployee", methods=['GET','POST'])
 def GetEmployee():
     return render_template('GetEmp.html')
 
+@app.route("/getemp", methods=['POST'])
+def GetEmp():
+    emp_id = request.form['emp_id']
+    select_sql = "SELECT * FROM employee where emp_id= %s"
+    cursor = db_conn.cursor()
+     try:
+        cursor.execute(select_sql, (emp_id))
+        myresult = mycursor.fetchone()
+
+    return render_template('GetEmpOutput.html', id= myresult[0], fname= myresult[1], lname= myresult[2], 
+    interest = myresult[3], location= myresult[4])
 
 @app.route("/addemp", methods=['POST'])
 def AddEmp():
