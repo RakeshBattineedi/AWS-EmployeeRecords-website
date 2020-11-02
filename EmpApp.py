@@ -41,7 +41,7 @@ def GetEmp():
     cursor = db_conn.cursor()
     try:
         cursor.execute(select_sql, (emp_id))
-        myresult = mycursor.fetchone()
+        myresult = cursor.fetchall()
     except Exception as e:
         return str(e)
     finally:
